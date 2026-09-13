@@ -5,9 +5,11 @@ set -o pipefail
 # Configuration
 # ══════════════════════════════════════════════════════════════════════════════
 
+test -r /etc/default/gsmenu && . /etc/default/gsmenu
+
 REMOTE_IP="${REMOTE_IP:-10.5.0.10}"
 AIR_FIRMWARE_TYPE="${AIR_FIRMWARE_TYPE:-wfb}"
-SSH_PASS="12345"
+SSH_PASS="${SSH_PASS:-12345}"
 CACHE_DIR="/tmp/gsmenu_cache"
 CACHE_TTL=10 # seconds
 MAJESTIC_YAML="/etc/majestic.yaml"
