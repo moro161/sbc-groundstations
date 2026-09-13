@@ -4,15 +4,15 @@
 #
 ###############################################################################
 
-PIXELPILOT_VERSION=47e21fb43fe68c9fe43771d630d6c36d06755120
-PIXELPILOT_SITE=https://github.com/OpenIPC/PixelPilot_rk.git
+PIXELPILOT_VERSION=07d278c4acce9a8c8b4d519d2302dc0bebe3b66f
+PIXELPILOT_SITE=https://github.com/moro161/PixelPilot_rk.git
 PIXELPILOT_SITE_METHOD = git
 PIXELPILOT_GIT_SUBMODULES = YES
 PIXELPILOT_INSTALL_STAGING = NO
 PIXELPILOT_INSTALL_TARGET = YES
 PIXELPILOT_DEPENDENCIES = rockchip-mpp librga mali-driver-custom mesa3d libdrm cairo spdlog json-for-modern-cpp yaml-cpp libgpiod gstreamer1 gst1-plugins-base msgpack
 
-PIXELPILOT_CMAKE_OPTS += -DCMAKE_PREFIX_PATH=$(STAGING_DIR)/usr
+PIXELPILOT_CONF_OPTS += -DCMAKE_PREFIX_PATH=$(STAGING_DIR)/usr -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 define PIXELPILOT_INSTALL_INIT_SYSV
 	$(INSTALL) -D -m 0755 $(BR2_EXTERNAL_OPENIPC_SBC_GS_PATH)/package/pixelpilot/files/S99pixelpilot \
